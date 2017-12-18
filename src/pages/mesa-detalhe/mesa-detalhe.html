@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Detalhe</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="fechar()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <div text-center>
+            <ion-item>
+                <ion-avatar item-left>
+                  <img src="assets/img/{{mesa.estado}}.jpg">
+                </ion-avatar>
+                <h2>{{ mesa.numero }}</h2> {{ mesa.estado }}
+            </ion-item>
+      </div>
+  </ion-content>

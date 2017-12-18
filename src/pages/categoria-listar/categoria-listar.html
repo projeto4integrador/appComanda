@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista Categorias
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+  
+  <ion-content padding>
+  <button ion-item *ngFor="let categoria of categorias" (click)="openProdutos(categoria)">
+      <h2>
+        <ion-icon ios="ios-arrow-dropright-outline" md="md-arrow-dropright"></ion-icon> {{ categoria.descricao }}
+      </h2>    
+  </button>    
+  
+    <ion-infinite-scroll (ionInfinite)="getCategoria($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  
+  </ion-content>

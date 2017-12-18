@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Mesas
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-searchbar
+        placeholder="Procurar mesa"
+        (ionInput)="getItems($event)">
+      </ion-searchbar>
+     <br>
+      <button ion-item *ngFor="let item of items" (click)="CategoriasPedidos(item)">
+              <ion-avatar item-left>
+                <img src="assets/img/{{item.estado}}.jpg">
+              </ion-avatar>        
+              <h2>{{ item.numero }}</h2>
+      </button>
+  </ion-content>

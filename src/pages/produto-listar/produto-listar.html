@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista Produto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-searchbar placeholder="Produrar produto" (ionInput)="getItems($event)">
+  </ion-searchbar>
+  <br>
+  <button ion-item *ngFor="let item of produtos" (click)="openProdutosDetalhe($event, item)">
+      <h2>
+        <ion-icon ios="ios-star" md="md-star"></ion-icon> Nro°: {{ item.id }} - {{ item.descricao }}
+      </h2>
+  </button>
+</ion-content>

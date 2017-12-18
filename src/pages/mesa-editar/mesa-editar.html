@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title><img class="title-image" alt="logo" height="40" src="assets/img/logo.png"></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="fechar()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome/Numero da Mesa</ion-label>
+      <ion-input type="text" name="numero" [(ngModel)]="modelo.numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select [(ngModel)]="modelo.estado">
+        <ion-option value="0">DISPONIVEL</ion-option>
+        <ion-option value="1">OCUPADA</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="salvar()" color="primary">Salvar</button>
+
+</ion-content>

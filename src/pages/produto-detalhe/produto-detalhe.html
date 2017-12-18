@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Detalhe Produto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="background_image_header text-center">
+    <br>
+    <h3 class="headline">
+      Codigo : {{ items.id }}
+    </h3>
+    <br>
+    <a class="btn__line__square__white">
+      Nome da Categoria
+    </a>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="item__content">
+    <p padding>
+      {{items.descricao}}
+    </p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      Adicionais
+    </ion-card-header>
+
+    <ion-grid>
+        <ion-row *ngFor="let adicional of adicionais">
+           <ion-col col-md-3 push-md-3>
+             <ion-checkbox color="dark" [(ngModel)]="adicional.id" checked="false"></ion-checkbox>
+             {{ adicional.descricao }}
+           </ion-col>
+           <ion-col col-md-3 pull-md-9><ion-badge>Valor R$: {{ adicional.valor }}</ion-badge></ion-col>
+        </ion-row>
+     </ion-grid> 
+
+
+  </ion-card>
+  <ion-grid>
+     <ion-row>
+        <ion-col col-md-6 push-md-3></ion-col>
+        <ion-col col-md-3 push-md-3></ion-col>
+        <ion-col col-md-3 pull-md-9>
+          Valor <ion-badge item-end>R$: {{items.valor}}</ion-badge>
+        </ion-col>
+     </ion-row>
+  </ion-grid><br>
+      <ion-row>
+         <ion-col col-md-6 push-md-3></ion-col>
+         <ion-col col-md-3 push-md-3></ion-col>
+         <ion-col col-md-3 pull-md-9>
+            <button ion-button  color="danger" icon-right (click)=addCarrinho($event,items)>
+                Add Carrinho
+                <ion-icon name="cart"></ion-icon>
+            </button>
+         </ion-col>
+      </ion-row>
+</ion-content>

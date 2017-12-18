@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pedidos Mesa
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list class="accordion-list">
+    <!-- primeiro Level -->
+    <ion-list-header *ngFor="let pedidosDaMesa of pedidos; let i = index" no-lines no-padding>
+      
+      <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': pedidosDaMesa.open, 'section': !pedidosDaMesa.open}">
+        <ion-icon item-left name="arrow-forward" *ngIf="!pedidosDaMesa.open"></ion-icon>
+        <ion-icon item-left name="arrow-down" *ngIf="pedidosDaMesa.open"></ion-icon>
+          <h2>Pedido: {{ pedidosDaMesa.id }}</h2> <button ion-button outline item-end>R$: {{pedidosDaMesa.valor}}</button>
+          <p>{{ pedidosDaMesa.estado}}</p>
+      </button>
+      <button ion-button color="primary" block (click)="finalizarMesa(i)">Finalizar Pedido [ {{ pedidosDaMesa.id }} ] Valor Total:
+        R$: {{pedidosDaMesa.valor}}
+      </button>
+ 
+      <ion-list *ngIf="pedidosDaMesa.itens && pedidosDaMesa.open" no-lines>
+        <!-- segundo Level -->
+        <ion-list-header *ngFor="let itemDoPedido of pedidosDaMesa.itens; let j = index" no-padding>
+          
+          <button ion-item (click)="toggleItem(i, j)" *ngIf="itemDoPedido.produto" class="child" detail-none>
+            <ion-icon item-left name="add" *ngIf="!itemDoPedido.open"></ion-icon>
+            <ion-icon item-left name="close" *ngIf="itemDoPedido.open"></ion-icon>
+            <h2> {{ itemDoPedido.produto.descricao }} </h2>
+            <p>OBS: {{ itemDoPedido.observacao }}</p>
+               QTD: <button ion-button outline item-end>{{ itemDoPedido.quantidade}}</button> 
+               X <button ion-button outline item-end>R$: {{ itemDoPedido.produto.valor }}</button>
+               = <button ion-button outline item-end> {{somaQtdItem(itemDoPedido.quantidade,itemDoPedido.produto.valor)}}</button>
+          </button>
+ 
+
+      
+      <ion-item *ngIf="!itemDoPedido.produto.adicional" ion-item detail-none class="child-item" text-wrap>
+          <h2> {{ itemDoPedido.produto.descricao }} </h2>
+          <p>OBS: {{ itemDoPedido.observacao }}</p>
+             QTD: <button ion-button outline item-end>{{ itemDoPedido.quantidade}}</button> 
+             X <button ion-button outline item-end>R$: {{ itemDoPedido.produto.valor }}</button>
+             = <button ion-button outline item-end> {{somaQtdItem(itemDoPedido.quantidade,itemDoPedido.produto.valor)}}</button>
+        </ion-item>
+
+        <ion-list *ngIf="itemDoPedido.produto.adicional && itemDoPedido.open">
+          <ion-item *ngFor="let item of itemDoPedido.produto.adicional; let k = index" detail-none class="child-item" text-wrap>
+            <h2>{{item.descricao}} ... <button ion-button outline item-end>R$: {{item.valor}}</button></h2>            
+          </ion-item>
+        </ion-list>
+
+        </ion-list-header>
+      </ion-list>      
+    </ion-list-header>
+  </ion-list>
+</ion-content>

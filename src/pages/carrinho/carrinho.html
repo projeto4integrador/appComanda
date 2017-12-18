@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+          Carrinho
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+        <ion-card>
+              <ion-card-header>
+           Item
+          </ion-card-header>
+            <ion-card-content *ngIf="items.length === 0" >
+              Seu carrinho está vazio!
+            </ion-card-content>
+           <ion-list no-lines>
+             <ion-item >
+            <ion-avatar item-left>
+             <img src="assets/img/2.jpg">
+            </ion-avatar>
+            <h2>{{items.descricao}} </h2>
+            <p>R$
+                <span st>{{items.valor}} <b>x {{items.quantidade}}</b> = 
+                  {{somaQtdItem(items.quantidade,items.valor)}} </span>
+              </p>
+            <div> 
+                <button primary large>
+                  <ion-icon name="add" (click)="incQuantidade(items.quantidade)"></ion-icon>
+                </button>
+                <button primary large>
+                <ion-icon name="remove" (click)="decQuantidade(items.quantidade)"></ion-icon>
+                </button>
+            </div>
+          </ion-item>
+        </ion-list>
+          <ion-card-content>
+              <div>Total do item pedido é {{somaQtdItem(items.quantidade,items.valor)}}</div>
+          </ion-card-content>
+         
+            
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+              
+           <button ion-button full 
+              (click)="criarPedido()"
+              [disabled]="0 === items.length">Checkout</button>
+            </ion-card-content>
+        </ion-card>
+        </ion-content>

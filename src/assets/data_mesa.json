@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "numero": "Mesa 1",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 2,
+      "numero": "Mesa 2",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 3,
+      "numero": "Mesa 3",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 4,
+      "numero": "Mesa 4",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 5,
+      "numero": "Mesa 5",
+      "estado": "OCUPADO",
+      "pedidos": []
+    },
+    {
+      "id": 6,
+      "numero": "Mesa 6",
+      "estado": "OCUPADO",
+      "pedidos": []
+    },
+    {
+      "id": 7,
+      "numero": "Mesa 7",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 8,
+      "numero": "Mesa 8",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 9,
+      "numero": "Mesa 9",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    },
+    {
+      "id": 10,
+      "numero": "Mesa 10",
+      "estado": "DISPONIVEL",
+      "pedidos": []
+    }
+  ]

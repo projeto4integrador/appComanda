@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img class="title-image" alt="logo" height="40" src="assets/img/logo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let mesa of mesas">
+      <ion-item (click)="openMesa(mesa)">
+        <ion-avatar item-left>
+          <img src="assets/img/{{mesa.estado}}.jpg">
+      </ion-avatar>        
+        <h2>{{ mesa.numero }}</h2> {{ mesa.estado }}
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="primary" (click)="openEditaMesa(mesa.id)">
+            <ion-icon name="create"></ion-icon>
+            Editar
+          </button>
+        <button ion-button color="danger" (click)="deletaMesa(mesa)">
+            <ion-icon name="trash"></ion-icon>
+            Excluir
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="getMesas($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="openCriaMesa()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

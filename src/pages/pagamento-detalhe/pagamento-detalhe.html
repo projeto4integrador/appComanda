@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Checkout</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="correnteStep">
+      <ion-segment-button value="cadastro">
+        Cadastro
+      </ion-segment-button>
+      <ion-segment-button value="pagamento">
+        Pagamento
+      </ion-segment-button>
+      <ion-segment-button value="previa">
+        Prévia
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="correnteStep">
+    <ion-list *ngSwitchCase="'cadastro'">
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="email" placeholder="andre@example.com"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Nome completo</ion-label>
+        <ion-input type="text" placeholder="Andre Luiz"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'pagamento'">
+        <form id="payment-form" method="post" action="/">
+          <ion-item>
+              <ion-label for="credit-card-number">Numero do cartão</ion-label>
+              <div id="credit-card-number" class="hosted-field"></div>
+          </ion-item>
+          <ion-item>
+              <label for="cvv">CVV</label>
+              <div id="cvv" class="hosted-field"></div>
+          </ion-item>
+          <ion-item>
+              <ion-label for="expiration-date">Data de expiração</ion-label>
+              <div id="expiration-date" class="hosted-field"></div>
+          </ion-item>
+          <input type="submit" id="submitButton" style="visibility: hidden;">
+        </form>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'previa'">
+      <ion-item>
+        <ion-card>
+          <ion-card-header>Prévia do pedido : {{pedido.id}}</ion-card-header>
+          <ion-card-content *ngIf="pedido.itens.length === 0">
+            Carrinho vazinho!
+          </ion-card-content>
+          <ion-list no-lines>
+            <ion-item *ngFor="let itemDoPedido of pedido.itens; let j = index">
+              <ion-avatar item-left>
+                <img src="assets/img/4.jpg">
+              </ion-avatar>
+              <h2>{{itemDoPedido.produto.descricao}}</h2>
+              <div>
+                <p>R$
+                  <span st>{{itemDoPedido.produto.valor}} <b>x {{ itemDoPedido.quantidade}}</b> = 
+                    {{somaQtdItem(itemDoPedido.quantidade,itemDoPedido.produto.valor)}} </span>
+                </p>
+              </div>
+            </ion-item>
+          </ion-list>
+          <ion-card-content *ngIf="pedido.itens.length > 0">
+            <div>Total para este pedido R$ {{getCartTotal()}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button color="primary" block (click)=paymentCreditCard() *ngIf="correnteStep !== 'previa'">
+      Processar
+    </button>
+    <button ion-button color="primary" block (click)=completeCheckout() *ngIf="correnteStep === 'previa'">
+      Completar checkout
+    </button>
+  </ion-toolbar>
+</ion-footer>

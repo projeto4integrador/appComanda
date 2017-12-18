@@ -1,0 +1,79 @@
+[
+  {
+    "id": 0,
+    "categoria": "Refeições",
+    "titulo": "Burrito",
+    "descricao": "Preparado com massa de tortilla, é servido enroladinho e os recheios variam bastante. Pode ser recheado com carnes, queijo, tomate, feijão, chilli, entre outros.",
+    "imgpath": "assets/img/backgrounds/img1.png"
+  },
+  {
+    "id": 1,
+    "categoria": "Refeições",
+    "titulo": "Taco",
+    "descricao": "O taco é uma ótima opção para o lanche, é preparado com a tortilla à base de milho e recheado com alguma carne, queijo, alface, tomate, entre outros. Servido em formato diferente do burrito.",
+    "imgpath": "assets/img/backgrounds/img2.png"
+  },
+  {
+    "id": 2,
+    "categoria": "Cervejas",
+    "titulo": "titulo comida 077",
+    "descricao": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "imgpath": "assets/img/backgrounds/img3.png"
+  },
+  {
+    "id": 3,
+    "categoria": "Nooperness",
+    "titulo": "Garapiñados",
+    "descricao": "Amendoim, nozes e/ou amêndoas, cobertas com uma calda de açúcar quente que quando seca cria uma camada grossa e crocante.",
+    "imgpath": "assets/img/backgrounds/img1.png"
+  },
+  {
+    "id": 4,
+    "categoria": "Fooperness",
+    "titulo": "Polvorón",
+    "descricao": "Biscoito amanteigado mexicano, um doce simples e prático de preparar. A receita pode levar nozes e essência de baunilha.",
+    "imgpath": "assets/img/backgrounds/img2.png"
+  },
+  {
+    "id": 5,
+    "categoria": "Doces e Sobremesas",
+    "titulo": "titulo comida 07",
+    "descricao": "Carne moída com feijão e molho de tomate apimentado. Pode ser servido como recheio para nachos, tortilla ou guarnições.",
+    "imgpath": "assets/img/backgrounds/img3.png"
+  },
+  {
+    "id": 6,
+    "categoria": "Longer categoria",
+    "titulo": "titulo comida 07",
+    "descricao": "Carne moída com feijão e molho de tomate apimentado. Pode ser servido como recheio para nachos, tortilla ou guarnições.",
+    "imgpath": "assets/img/backgrounds/img1.png"
+  },
+  {
+    "id": 7,
+    "categoria": "Items",
+    "titulo": "titulo comida 05",
+    "descricao": "Carne moída com feijão e molho de tomate apimentado. Pode ser servido como recheio para nachos, tortilla ou guarnições.",
+    "imgpath": "assets/img/backgrounds/img2.png"
+  },
+  {
+    "id": 8,
+    "categoria": "Almost at The End",
+    "titulo": "titulo comida 03",
+    "descricao": "Carne moída com feijão e molho de tomate apimentado. Pode ser servido como recheio para nachos, tortilla ou guarnições.",
+    "imgpath": "assets/img/backgrounds/img3.png"
+  },
+  {
+    "id": 9,
+    "categoria": "The Final One",
+    "titulo": "titulo comida 01",
+    "descricao": "Carne moída com feijão e molho de tomate apimentado. Pode ser servido como recheio para nachos, tortilla ou guarnições.",
+    "imgpath": "assets/img/backgrounds/img1.png"
+  },
+  {
+    "id": 10,
+    "categoria": "One More",
+    "titulo": "titulo comida",
+    "descricao": "Carne moída com feijão e molho de tomate apimentado. Pode ser servido como recheio para nachos, tortilla ou guarnições.",
+    "imgpath": "assets/img/backgrounds/img2.png"
+  }
+]
