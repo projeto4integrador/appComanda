@@ -17,7 +17,7 @@ export class LoginProvider {
       senha: senha
     };
     let url = 'usuario/';
-    this.http.post(url, data)
+    this.http.get(url+1)
     .subscribe((result: any) => {
       resolve(result.json());
     },
