@@ -34,7 +34,6 @@
     <ion-grid>
         <ion-row *ngFor="let adicional of adicionais">
            <ion-col col-md-3 push-md-3>
-             <ion-checkbox color="dark" [(ngModel)]="adicional.id" checked="false"></ion-checkbox>
              {{ adicional.descricao }}
            </ion-col>
            <ion-col col-md-3 pull-md-9><ion-badge>Valor R$: {{ adicional.valor }}</ion-badge></ion-col>

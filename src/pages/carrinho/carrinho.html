@@ -24,7 +24,7 @@
                 <span st>{{items.valor}} <b>x {{items.quantidade}}</b> = 
                   {{somaQtdItem(items.quantidade,items.valor)}} </span>
               </p>
-            <div> 
+            <div>              
                 <button primary large>
                   <ion-icon name="add" (click)="incQuantidade(items.quantidade)"></ion-icon>
                 </button>
@@ -33,6 +33,14 @@
                 </button>
             </div>
           </ion-item>
+              <ion-item>
+                <ion-label>Adicionais</ion-label>
+                <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Não" okText="Ok!">
+                  <ion-option *ngFor="let adicional of adicionais" value="adicional.valor">
+                    {{ adicional.descricao }} - R$ {{ adicional.valor }}
+                  </ion-option>
+                </ion-select>
+              </ion-item>         
         </ion-list>
           <ion-card-content>
               <div>Total do item pedido é {{somaQtdItem(items.quantidade,items.valor)}}</div>

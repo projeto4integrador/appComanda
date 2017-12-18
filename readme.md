@@ -22,8 +22,8 @@
    ├── ...
    ├── src                       
    │   ├── app                    # This folder contains global modules and styling
-   │   ├── assets                 # This folder contains images and the *data.json*
-   |   ├── pages                  # Contains all the individual pages (home, tabs, category, list, single-item)
+   │   ├── assets                 # This folder contains images and the
+   |   ├── pages                  # Contains all the individual pages
    |   ├── services               # Contains the item-api service that retrieves data from the JSON file
    |   ├── theme                  # The global SCSS variables to use throughout the app
    |   ├── declarations.d.ts      # A config file to make TypeScript objects available in intellisense
